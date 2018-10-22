@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by id" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-Hz-bh0">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Show repositories from id" translatesAutoresizingMaskIntoConstraints="NO" id="DeR-Hz-bh0">
                                 <rect key="frame" x="0.0" y="64" width="375" height="56"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </searchBar>

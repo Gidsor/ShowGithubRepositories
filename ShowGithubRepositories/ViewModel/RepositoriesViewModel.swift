@@ -24,8 +24,9 @@ class RepositoriesViewModel {
         return repositoryName
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .flatMapLatest { text -> Observable<(HTTPURLResponse, Any)> in
+                
                 let link = text != "" ? GitHubAPI.allPublicRepositories + "?since=\(Int(text)! - 1)" : GitHubAPI.allPublicRepositories
-                print(link)
+                
                 return RxAlamofire
                     .requestJSON(.get, link)
                     .catchError { error in

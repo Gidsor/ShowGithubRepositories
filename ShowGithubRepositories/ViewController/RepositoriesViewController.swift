@@ -18,8 +18,9 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var idSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
 
-    let disposeBag = DisposeBag()
     var repositoryNetworkModel: RepositoriesViewModel!
+    
+    let disposeBag = DisposeBag()
     
     var idSearchBarObservable: Observable<String> {
         return idSearchBar.rx.text
@@ -48,6 +49,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
                 cell.id.text = String(repository.id)
                 cell.name.text = repository.owner.login + "/" + repository.name
                 cell.descriptionRepository.text = repository.description
+                cell.url = repository.url
                 
                 return cell
             }
@@ -56,7 +58,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! RepositoryCell
-        guard let url = URL(string: "https://github.com/\(cell.name.text!)") else { return }
+        guard let url = URL(string: cell.url) else { return }
         
         let svc = SFSafariViewController(url: url)
         present(svc, animated: true)
