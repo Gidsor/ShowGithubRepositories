@@ -14,7 +14,7 @@
 		C0C1C6D6217E0A9D0044CEA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D5217E0A9D0044CEA9 /* Assets.xcassets */; };
 		C0C1C6D9217E0A9D0044CEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D7217E0A9D0044CEA9 /* LaunchScreen.storyboard */; };
 		C0C1C6E3217E0CA30044CEA9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6E2217E0CA30044CEA9 /* Repository.swift */; };
-		C0C1C6E5217E10080044CEA9 /* RepositoriesNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6E4217E10080044CEA9 /* RepositoriesNetworkModel.swift */; };
+		C0C1C6E8217E19280044CEA9 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6E7217E19280044CEA9 /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 		C0C1C6D8217E0A9D0044CEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0C1C6DA217E0A9D0044CEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C1C6E2217E0CA30044CEA9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
-		C0C1C6E4217E10080044CEA9 /* RepositoriesNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesNetworkModel.swift; sourceTree = "<group>"; };
+		C0C1C6E7217E19280044CEA9 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		D9809D9CEFA4A2E1CBE81F93 /* Pods-ShowGithubRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowGithubRepositories.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShowGithubRepositories/Pods-ShowGithubRepositories.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +86,7 @@
 				C0C1C6D2217E0A9B0044CEA9 /* Main.storyboard */,
 				C0C1C6E1217E0C950044CEA9 /* Model */,
 				C0C1C6E0217E0C810044CEA9 /* ViewController */,
+				C0C1C6E6217E19030044CEA9 /* View */,
 				C0C1C6D5217E0A9D0044CEA9 /* Assets.xcassets */,
 				C0C1C6D7217E0A9D0044CEA9 /* LaunchScreen.storyboard */,
 				C0C1C6DA217E0A9D0044CEA9 /* Info.plist */,
@@ -105,9 +106,16 @@
 			isa = PBXGroup;
 			children = (
 				C0C1C6E2217E0CA30044CEA9 /* Repository.swift */,
-				C0C1C6E4217E10080044CEA9 /* RepositoriesNetworkModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C0C1C6E6217E19030044CEA9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0C1C6E7217E19280044CEA9 /* RepositoryCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,10 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C1C6E5217E10080044CEA9 /* RepositoriesNetworkModel.swift in Sources */,
 				C0C1C6D1217E0A9B0044CEA9 /* RepositoriesViewController.swift in Sources */,
 				C0C1C6CF217E0A9B0044CEA9 /* AppDelegate.swift in Sources */,
 				C0C1C6E3217E0CA30044CEA9 /* Repository.swift in Sources */,
+				C0C1C6E8217E19280044CEA9 /* RepositoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
