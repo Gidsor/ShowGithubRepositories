@@ -6,6 +6,6 @@ target 'ShowGithubRepositories' do
   use_frameworks!
 
   # Pods for ShowGithubRepositories
-  pod 'RxAlamofire'
+  pod 'RxAlamofire/RxCocoa'
   pod 'ObjectMapper'
 end
