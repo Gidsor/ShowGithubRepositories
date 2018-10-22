@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A5B76CE931F330C31BF08E2A /* Pods_ShowGithubRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E62432536F3B93EFF1C713D /* Pods_ShowGithubRepositories.framework */; };
 		C0C1C6CF217E0A9B0044CEA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6CE217E0A9B0044CEA9 /* AppDelegate.swift */; };
-		C0C1C6D1217E0A9B0044CEA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6D0217E0A9B0044CEA9 /* ViewController.swift */; };
+		C0C1C6D1217E0A9B0044CEA9 /* RepositoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6D0217E0A9B0044CEA9 /* RepositoriesViewController.swift */; };
 		C0C1C6D4217E0A9B0044CEA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D2217E0A9B0044CEA9 /* Main.storyboard */; };
 		C0C1C6D6217E0A9D0044CEA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D5217E0A9D0044CEA9 /* Assets.xcassets */; };
 		C0C1C6D9217E0A9D0044CEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D7217E0A9D0044CEA9 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		3E62432536F3B93EFF1C713D /* Pods_ShowGithubRepositories.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShowGithubRepositories.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C1C6CB217E0A9B0044CEA9 /* ShowGithubRepositories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShowGithubRepositories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0C1C6CE217E0A9B0044CEA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C0C1C6D0217E0A9B0044CEA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C0C1C6D0217E0A9B0044CEA9 /* RepositoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewController.swift; sourceTree = "<group>"; };
 		C0C1C6D3217E0A9B0044CEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0C1C6D5217E0A9D0044CEA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0C1C6D8217E0A9D0044CEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,8 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				C0C1C6CE217E0A9B0044CEA9 /* AppDelegate.swift */,
-				C0C1C6D0217E0A9B0044CEA9 /* ViewController.swift */,
 				C0C1C6D2217E0A9B0044CEA9 /* Main.storyboard */,
+				C0C1C6D0217E0A9B0044CEA9 /* RepositoriesViewController.swift */,
 				C0C1C6D5217E0A9D0044CEA9 /* Assets.xcassets */,
 				C0C1C6D7217E0A9D0044CEA9 /* LaunchScreen.storyboard */,
 				C0C1C6DA217E0A9D0044CEA9 /* Info.plist */,
@@ -208,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C1C6D1217E0A9B0044CEA9 /* ViewController.swift in Sources */,
+				C0C1C6D1217E0A9B0044CEA9 /* RepositoriesViewController.swift in Sources */,
 				C0C1C6CF217E0A9B0044CEA9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

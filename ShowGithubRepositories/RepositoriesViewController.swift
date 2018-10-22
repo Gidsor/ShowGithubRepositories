@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RepositoriesViewController.swift
 //  ShowGithubRepositories
 //
 //  Created by Vadim Denisov on 22/10/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RepositoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
