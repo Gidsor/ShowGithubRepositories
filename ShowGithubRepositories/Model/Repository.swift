@@ -14,6 +14,8 @@ class Repository: Mappable {
     var description: String!
     var url: String!
     
+    var owner: Owner!
+    
     required init?(map: Map) { }
     
     func mapping(map: Map) {
@@ -21,7 +23,19 @@ class Repository: Mappable {
         name <- map["name"]
         description <- map["description"]
         url <- map["html_url"]
+        owner <- map["owner"]
     }
 }
 
+class Owner: Mappable {
+    var id: Int!
+    var login: String!
+    
+    required init?(map: Map) { }
+    
+    func mapping(map: Map) {
+        id <- map["id"]
+        login <- map["login"]
+    }
+}
 
