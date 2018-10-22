@@ -11,6 +11,7 @@ import ObjectMapper
 import RxAlamofire
 import RxSwift
 import RxCocoa
+import SafariServices
 
 class RepositoriesViewController: UIViewController, UITableViewDelegate {
 
@@ -53,6 +54,13 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
             .disposed(by: disposeBag)
     }
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! RepositoryCell
+        guard let url = URL(string: "https://github.com/\(cell.name.text!)") else { return }
+        
+        let svc = SFSafariViewController(url: url)
+        present(svc, animated: true)
+    }
+    
 }
 
