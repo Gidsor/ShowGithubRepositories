@@ -14,6 +14,7 @@
 		C0C1C6D6217E0A9D0044CEA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D5217E0A9D0044CEA9 /* Assets.xcassets */; };
 		C0C1C6D9217E0A9D0044CEA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0C1C6D7217E0A9D0044CEA9 /* LaunchScreen.storyboard */; };
 		C0C1C6E3217E0CA30044CEA9 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6E2217E0CA30044CEA9 /* Repository.swift */; };
+		C0C1C6E5217E10080044CEA9 /* RepositoriesNetworkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C1C6E4217E10080044CEA9 /* RepositoriesNetworkModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		C0C1C6D8217E0A9D0044CEA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0C1C6DA217E0A9D0044CEA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0C1C6E2217E0CA30044CEA9 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		C0C1C6E4217E10080044CEA9 /* RepositoriesNetworkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesNetworkModel.swift; sourceTree = "<group>"; };
 		D9809D9CEFA4A2E1CBE81F93 /* Pods-ShowGithubRepositories.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShowGithubRepositories.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShowGithubRepositories/Pods-ShowGithubRepositories.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				C0C1C6E2217E0CA30044CEA9 /* Repository.swift */,
+				C0C1C6E4217E10080044CEA9 /* RepositoriesNetworkModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -207,13 +210,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShowGithubRepositories/Pods-ShowGithubRepositories-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -227,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C1C6E5217E10080044CEA9 /* RepositoriesNetworkModel.swift in Sources */,
 				C0C1C6D1217E0A9B0044CEA9 /* RepositoriesViewController.swift in Sources */,
 				C0C1C6CF217E0A9B0044CEA9 /* AppDelegate.swift in Sources */,
 				C0C1C6E3217E0CA30044CEA9 /* Repository.swift in Sources */,

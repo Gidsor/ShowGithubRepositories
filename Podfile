@@ -6,5 +6,6 @@ target 'ShowGithubRepositories' do
   use_frameworks!
 
   # Pods for ShowGithubRepositories
-  pod 'SwiftyJSON', '~> 4.0'
+  pod 'RxAlamofire'
+  pod 'ObjectMapper'
 end
