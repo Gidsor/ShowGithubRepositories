@@ -10,7 +10,6 @@ import UIKit
 
 class RepositoryCell : UITableViewCell {
     @IBOutlet weak var id: UILabel!
-    @IBOutlet weak var login: UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var descriptionRepository: UILabel!
 }
