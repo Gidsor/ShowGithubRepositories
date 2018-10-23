@@ -17,10 +17,17 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var idSearchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
-    var repositoryNetworkModel: RepositoriesViewModel!
     
-    let disposeBag = DisposeBag()
+    private var refreshControl: UIRefreshControl = {
+        let refreshController = UIRefreshControl()
+        refreshController.attributedTitle = NSAttributedString(string: "Refresh Repositories ...")
+        refreshController.addTarget(self, action: #selector(RepositoriesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        return refreshController
+    }()
+    
+    private var repositoryNetworkModel: RepositoriesViewModel!
+    
+    private let disposeBag = DisposeBag()
     
     var idSearchBarObservable: Observable<String> {
         return idSearchBar.rx.text
@@ -37,6 +44,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
         
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.refreshControl = refreshControl
     }
     
     func setupModel() {
@@ -55,7 +63,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
             }
             .disposed(by: disposeBag)
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! RepositoryCell
         guard let url = URL(string: cell.url) else { return }
@@ -64,5 +72,9 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
         present(svc, animated: true)
     }
     
-}
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        idSearchBar.text = ""
+        refreshControl.endRefreshing()
+    }
 
+}
