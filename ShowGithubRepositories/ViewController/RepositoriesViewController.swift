@@ -19,10 +19,10 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     private var refreshControl: UIRefreshControl = {
-        let refreshController = UIRefreshControl()
-        refreshController.attributedTitle = NSAttributedString(string: "Refresh Repositories ...")
-        refreshController.addTarget(self, action: #selector(RepositoriesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
-        return refreshController
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Refresh Repositories ...")
+        refreshControl.addTarget(self, action: #selector(RepositoriesViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        return refreshControl
     }()
     
     private var repositoryNetworkModel: RepositoriesViewModel!
