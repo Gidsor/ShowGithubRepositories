@@ -12,11 +12,11 @@ import RxSwift
 import RxCocoa
 
 class RepositoriesViewModel {
-    private var repositoryName: Observable<String>
+    private var repositoryName: Observable<String?>
     
     lazy var repositoriesDriver: Driver<[Repository]> = self.fetchRepositories()
     
-    init(nameObservable: Observable<String>) {
+    init(nameObservable: Observable<String?>) {
         self.repositoryName = nameObservable
     }
     
@@ -25,7 +25,7 @@ class RepositoriesViewModel {
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .flatMapLatest { text -> Observable<(HTTPURLResponse, Any)> in
                 
-                let link = text != "" ? GitHubAPI.allPublicRepositories + "?since=\(Int(text)! - 1)" : GitHubAPI.allPublicRepositories
+                let link = text != "" ? GitHubAPI.allPublicRepositories + "?since=\(Int(text!)! - 1)" : GitHubAPI.allPublicRepositories
                 
                 return RxAlamofire
                     .requestJSON(.get, link)
