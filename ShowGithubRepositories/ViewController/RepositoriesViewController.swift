@@ -74,6 +74,16 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
         present(svc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if tableView.numberOfRows(inSection: indexPath.section) - 1 == indexPath.row {
+            DispatchQueue.main.async {
+                self.idSearchBehaviorRelay.accept((cell as! RepositoryCell).id.text)
+                tableView.setContentOffset(.zero, animated: true)
+            }
+        }
+        
+    }
+    
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         idSearchBar.text = ""
         idSearchBehaviorRelay.accept("")
