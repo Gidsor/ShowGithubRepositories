@@ -25,14 +25,13 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
         return refreshControl
     }()
     
-    var behaviorRelay = BehaviorRelay<String?>(value: "12")
+    private let idSearchBehaviorRelay = BehaviorRelay<String?>(value: "")
+    private let disposeBag = DisposeBag()
     
     private var repositoryNetworkModel: RepositoriesViewModel!
     
-    private let disposeBag = DisposeBag()
-    
-    var idSearchBarObservable: Observable<String?> {
-        return behaviorRelay.asObservable()
+    var idSearchObservable: Observable<String?> {
+        return idSearchBehaviorRelay.asObservable()
             .map { $0 }
             .debounce(0.5, scheduler: MainScheduler.instance)
             .distinctUntilChanged()
@@ -42,14 +41,16 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         setupModel()
-        idSearchBar.rx.text.asDriver().drive(behaviorRelay).disposed(by: disposeBag)
+        
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.refreshControl = refreshControl
     }
     
     func setupModel() {
-        repositoryNetworkModel = RepositoriesViewModel(nameObservable: idSearchBarObservable)
+        idSearchBar.rx.text.asDriver().drive(idSearchBehaviorRelay).disposed(by: disposeBag)
+        
+        repositoryNetworkModel = RepositoriesViewModel(nameObservable: idSearchObservable)
         
         repositoryNetworkModel.repositoriesDriver
             .drive(tableView.rx.items) { (tv, i, repository) in
@@ -75,7 +76,7 @@ class RepositoriesViewController: UIViewController, UITableViewDelegate {
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         idSearchBar.text = ""
-        behaviorRelay.accept("")
+        idSearchBehaviorRelay.accept("")
         refreshControl.endRefreshing()
     }
 
